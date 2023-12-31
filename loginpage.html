@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+
+<body>
+
+    <h1>User Profile</h1>
+
+    <div id="profileData"></div>
+
+    <script>
+        // Retrieve user data from local storage
+        var userData = localStorage.getItem("allusers");
+
+        if (userData !== null) {
+            userData = JSON.parse(userData);
+
+            // Display user data on the page
+            var profileDataElement = document.getElementById("profileData");
+            profileDataElement.innerHTML =
+                `
+                <p>Username: ${userData[0].Username}</p>
+                <p>Name: ${userData[0].FirstName} ${userData[0].LastName}</p>
+                <p>Age: ${userData[0].Age}</p>
+                <p>Email: ${userData[0].Email}</p>
+                <!-- Add more properties as needed -->
+                `
+                ;
+        } else {
+            console.log("No user data found.");
+        }
+    </script>
+
+</body>
+
+</html>

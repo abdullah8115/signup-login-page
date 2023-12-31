@@ -7,8 +7,6 @@ function openTab(tabName) {
     document.getElementById(tabName).style.display = "block";
 }
 
-
-
 function signupUser() {
     var newUsername = document.getElementById("newUsername").value;
     var newPassword = document.getElementById("newPassword").value;
@@ -56,6 +54,8 @@ function signupUser() {
 
     alert("Your account has been created!");
 
+    openuserprofile();
+
     // return false; 
 }
 
@@ -99,9 +99,15 @@ function loginUser() {
     } else {
         alert("Username not found. Please create a new account!");
     }
+
+    openuserprofile();
 }
 
+function openuserprofile(){
+    var userprofile = "loginpage.html";
 
+    window.open(userprofile)
+}
 
 openTab("login");
 
